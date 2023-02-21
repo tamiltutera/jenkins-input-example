@@ -1,0 +1,13 @@
+pipeline {
+    agent any 
+    stages {
+        stage('input'){
+            steps {
+                input(message: 'Hello world', ok: 'Submit')
+                sh '''
+                    hostname
+                '''
+            }
+        }
+    }
+}
